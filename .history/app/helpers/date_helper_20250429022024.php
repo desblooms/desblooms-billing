@@ -104,7 +104,7 @@ function date_difference($date1, $date2 = 'now', $unit = 'days') {
  * @param string $format Return format (optional)
  * @return string Modified date
  */
-function add_date_interval($date, $value, $unit = 'days', $format = 'Y-m-d') {
+function date_add($date, $value, $unit = 'days', $format = 'Y-m-d') {
     if (!is_numeric($date)) {
         $date = strtotime($date);
     }
@@ -147,8 +147,8 @@ function add_date_interval($date, $value, $unit = 'days', $format = 'Y-m-d') {
  * @param string $format Return format (optional)
  * @return string Modified date
  */
-function subtract_date_interval($date, $value, $unit = 'days', $format = 'Y-m-d') {
-    return add_date_interval($date, -$value, $unit, $format);
+function date_subtract($date, $value, $unit = 'days', $format = 'Y-m-d') {
+    return date_add($date, -$value, $unit, $format);
 }
 
 /**
